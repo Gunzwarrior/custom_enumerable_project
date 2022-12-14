@@ -23,6 +23,14 @@ module Enumerable
     return true if new_array == self
     false
   end
+
+  def my_any?
+    for i in self do
+      return true if yield i
+    end
+    false
+  end
+
 end
 
 class Array
