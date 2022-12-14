@@ -55,6 +55,14 @@ module Enumerable
     new_array
   end 
 
+  def my_inject(initial_value)
+    j = initial_value
+    for i in self do
+      j = yield(j, i)
+    end
+    j
+  end
+
 end
 
 class Array
