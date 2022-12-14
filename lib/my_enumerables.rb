@@ -6,6 +6,14 @@ module Enumerable
     end
     self
   end
+
+  def my_select
+    new_array = []
+    for i in self do
+      new_array.push(i) if yield i
+    end
+    new_array
+  end
 end
 
 class Array
