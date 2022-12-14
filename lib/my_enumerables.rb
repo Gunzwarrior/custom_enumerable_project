@@ -14,6 +14,15 @@ module Enumerable
     end
     new_array
   end
+
+  def my_all?
+    new_array = []
+    for i in self do
+      new_array.push(i) if yield i
+    end
+    return true if new_array == self
+    false
+  end
 end
 
 class Array
