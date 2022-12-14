@@ -38,6 +38,15 @@ module Enumerable
     true
   end
 
+  def my_count
+    return length unless block_given?
+    count = 0
+    for i in self do
+      count += 1 if yield i
+    end
+    count
+  end
+
 end
 
 class Array
