@@ -47,6 +47,14 @@ module Enumerable
     count
   end
 
+  def my_map
+    new_array = []
+    for i in self do
+      new_array.push(yield i)
+    end
+    new_array
+  end 
+
 end
 
 class Array
